@@ -4,13 +4,17 @@ public class GradeCalculator {
 
 	public static void main(String[] args) {
 
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		int sum = 0, mgrade = 0, fgrade = 0;
-		double avg = 0;
-		int x = 1;
-		final int studentCount = 5;
+		int x = 1, y = 1;
+		System.out.println("Please enter how many student do you want to grade.");
 
-		for (int k = 0; k < studentCount - 1; k++) {
+		int studentCount = sc.nextInt();
+
+		int values[] = new int[studentCount];
+
+		for (int k = 1; k < studentCount + 1; k++) {
 
 			for (int i = 1; i < 3; i++) { // For mid-term which affects %30
 
@@ -29,11 +33,18 @@ public class GradeCalculator {
 			System.out.println("Enter the final grade: ");
 			fgrade = sc.nextInt();
 			sum += fgrade * 1 / 2;
-			x++;
 
-			System.out.println("The " + k + ". student total grade: " + sum);
+			System.out.println("The " + x + ". student total grade: " + sum);
+			values[k - 1] = sum;
 			sum = 0;
+			x++;
 		}
+		for (int i = 0; i < values.length; i++) {
+
+			System.out.print(y + ". student grade: " + values[i] + "\n");
+			y++;
+		}
+
 	}
 
 }
