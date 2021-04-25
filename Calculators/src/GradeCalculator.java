@@ -16,7 +16,7 @@ public class GradeCalculator {
 
 		for (int k = 1; k < studentCount + 1; k++) {
 
-			for (int i = 1; i < 3; i++) { // For mid-term which affects %30
+			for (int i = 1; i < 3; i++) { // For mid-term which affects %25
 
 				System.out.println("Please enter " + x + ". student " + i + ". midterm grade: ");
 
